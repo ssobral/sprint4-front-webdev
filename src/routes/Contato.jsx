@@ -3,7 +3,8 @@ import { useRef } from 'react'
 function Contato() {
     const nome = useRef();
 
-    function handleSubmit(){
+    const handleSubmit = (e) =>{
+        e.preventDefault();
         alert("Obrigado pelo contato " + nome.current.value + ". Responderemos sua mensagem o mais rápido possível!")
     }
     return (
