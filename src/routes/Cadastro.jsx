@@ -43,16 +43,15 @@ function Cadastro() {
     }
 
     function validation(){
-        e.preventDefault();
         if (email.current.value !== confirmaemail.current.value) {
             alert('Os emails devem ser iguais.')
-            return false
+            navigate('/cadastro')
         } else if (senha.current.value !== confirmasenha.current.value) {
             alert('As senhas devem ser iguais.')
-            return false
+            navigate('/cadastro')
         } else if (cpf.current.value.length !== 11) {
             alert('CPF deve conter 11 digitos')
-            return false
+            navigate('/cadastro')
         } else {
             return true
         }
