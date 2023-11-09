@@ -37,6 +37,8 @@ function Cadastro() {
             ListaUsuarios.push(nome.current.value);
             ListaSenhas.push(senha.current.value);
             navigate('/login');
+        } else {
+            navigate('/cadastro')
         }
     }
 
