@@ -38,11 +38,12 @@ function Cadastro() {
             ListaSenhas.push(senha.current.value);
             navigate('/login');
         } else {
-            navigate('/cadastro')
+            navigate('/cadastro');
         }
     }
 
-    function validation() {
+    function validation(){
+        e.preventDefault();
         if (email.current.value !== confirmaemail.current.value) {
             alert('Os emails devem ser iguais.')
             return false
