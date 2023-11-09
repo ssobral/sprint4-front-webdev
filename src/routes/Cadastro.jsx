@@ -42,7 +42,8 @@ function Cadastro() {
         }
     }
 
-    function validation(){
+    const validation = (e) =>{
+        e.preventDefault();
         if (email.current.value !== confirmaemail.current.value) {
             alert('Os emails devem ser iguais.')
             navigate('/cadastro')
