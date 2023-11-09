@@ -1,0 +1,124 @@
+
+
+.armario{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.armario-titulo{
+    margin: 5.25rem 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.modal-button{
+    background-color: $verde;
+    color: $branco;
+    font-family: var(--fonte-principal);
+    margin-bottom: 3rem;
+    width: 15rem;
+}
+
+.modal-button:hover{
+    color: $verde;
+    background-color: $branco;
+    border: 0.8px solid $verde;
+}
+
+.armario-form-titulo{
+    margin: 3.25rem 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.armario-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .armario-form-info{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        gap:2rem;
+        width: 400px;
+        .form-embalagens{
+            color: $verde
+        }
+    }
+    .armario-form-datas{
+        display: flex;
+        gap: 2rem;
+        .armario-form-datas-titulo{
+            font-size: var(--tamanho-fonte);
+            font-family: var(--fonte-secundario);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3.25rem;
+        }
+        .armario-form-datas-data{
+            color: $verde
+        }
+        .armario-form-datas-data::placeholder{
+            color: $verde
+        }
+        
+    }
+    @media screen and (max-width: 1024px){
+        .armario-form-datas{
+            flex-wrap: wrap;
+        }
+    }
+    .armario-form-nome::placeholder{
+        color: $verde; 
+    }
+    .armario-form-button{
+        background-color: $verde;
+        color: $branco;
+        font-family: var(--fonte-principal);
+        margin: 3rem 0;
+    }
+    .armario-form-button:hover{
+        color: $verde;
+        background-color: $branco;
+        border: 0.8px solid $verde;
+    }
+
+
+}
+
+.armario-table-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+    .armario-table-titulo{
+        font-size: $fonte-titulo;
+        font-family: $fonte-secundaria;
+        font-weight: 700;
+    
+    }
+    .armario-table{
+        grid-area: tab;
+        width: 1200px;
+    }
+    @media screen and (max-width: 1250px){
+        .armario-table{
+            width: 700px;
+        }
+    }
+    @media screen and (max-width: 720px){
+        .armario-table-title-item{
+            font-size: 12px;
+        }
+        .armario-table-item{
+            font-size: 12px;
+        }
+    }
+    .armario-table-title{
+        color: $verde;
+    }
+}
+

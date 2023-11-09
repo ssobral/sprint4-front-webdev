@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+$fonte: Poppins;
+$fonte-secundaria: Josefin Sans; 
+$branco: #FFFFFF;
+$verde: #2D9471;
+$tamanho-fonte: 16px;
+$fonte-titulo: 30px;
+
+body{
+    font-family: $fonte;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: $tamanho-fonte;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+h1{
+    font-size: $fonte-titulo;
+    font-family: $fonte-secundaria;
+    font-weight: 700;
+}
+
+p{
+    font-size: $fonte;
+    font-size: $tamanho-fonte;
+}

@@ -1,0 +1,24 @@
+
+
+.excluirproduto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 3rem;
+    .excluir-buttons{
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 5rem;
+    }
+    .excluir-button{
+        background-color: $verde;
+        color: $branco;
+        font-family: var(--fonte-principal);
+    }
+    .excluir-button:hover{
+        color: $verde;
+        background-color: $branco;
+        border: 0.8px solid $verde;
+    }
+}

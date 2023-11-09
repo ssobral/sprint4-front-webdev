@@ -1,0 +1,27 @@
+
+
+.sobre_nos{
+    display: flex;
+    margin: 0 3rem;
+    .sobre_nos-logo{
+        width: 19.8rem;
+        height: 21.3rem;
+    }
+    .sobre_nos-textos-titulo{
+        margin: 1.2rem 0 3.2rem 0;
+    }
+    @media screen and (max-width: 850px) {
+        .sobre_nos-logo{
+            width: 188px;
+            height: 188px;
+        }
+    }
+}
+@media screen and (max-width: 850px){
+    .sobre_nos{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+

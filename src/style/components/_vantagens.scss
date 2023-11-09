@@ -1,0 +1,29 @@
+
+.vantagens-titulo{
+    margin: 5.25rem 0;
+    text-align: center;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1.8rem;
+    margin-bottom: 13.5rem;
+    .card{
+        box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+        max-width: 21.3rem;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        .imagem-card{
+            margin: 1rem;
+        }
+        .card-texto{
+            font-size: 18px;
+            margin:  1.5rem 2.68rem 2.3rem 02.68rem;
+            text-align: center;
+        }
+    }
+}
+

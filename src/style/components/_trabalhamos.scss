@@ -1,0 +1,57 @@
+
+.como_trabalhamos{
+    display: flex;
+    width: auto;
+    .como_trabalhamos-info{
+        margin: 0 7rem;
+        display: flex;
+        flex-direction: column;
+        .como_trabalhamos-texto{
+            margin-top: 2rem;
+        }
+    }
+    .como_trabalhamos-botoes{
+        display: flex;
+        gap: 1rem;
+        margin-left: 2rem;
+        .como_trabalhamos-button{
+            padding: 0.8rem 4.3rem;
+            background-color: $verde;
+            color: $branco;
+            font-size: 25px;
+            font-family: $fonte-secundaria;
+            border: 0.2rem solid $verde;
+        }
+    }
+    
+    .como_trabalhamos-button:hover{
+        background-color: $branco;
+        color: $verde;
+        border: 0.2rem solid $verde;
+    }
+
+    @media screen and (max-width: 850px){
+        .trabalhamos_enfeite{
+            display: none;
+        }
+        .como_trabalhamos-botoes{
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 2rem 2rem 2rem;
+        }
+        .como_trabalhamos-button{
+            padding: 0.6rem 2.3rem;
+        }
+    }
+    
+    @media screen and (max-width: 1300px){
+        .trabalhamos_enfeite{
+            width: 240px;
+        }
+        .como_trabalhamos-info{
+            margin: 0 3rem;
+        }
+    }
+    
+}
+

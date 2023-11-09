@@ -1,0 +1,55 @@
+
+.contato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contato-titulo{
+        font-size:45px;
+        font-family: $fonte-secundaria;
+        font-weight: 700;
+        text-align: center;
+        margin: 8rem 0 5rem 0;
+    }
+    .contato-dados{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        margin: 1rem;
+        .contato-texto{
+            font-size: 20px;
+            font-family: $fonte-secundaria;
+            text-align: center;
+        }
+        .contato-info{
+            display: flex;
+            gap: 2rem; 
+        }
+        .contato-mensagem{
+            resize: none;
+            height: 150px;
+        }
+        .contato-button{
+            background-color: $verde;
+            font-size: 20px;
+            color: $branco;
+            padding: 1.5rem 3.5rem;
+            margin-bottom: 2rem;
+        }
+        @media screen and (max-width: 850px){
+            .contato-info{
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

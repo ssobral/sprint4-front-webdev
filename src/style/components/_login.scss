@@ -1,0 +1,46 @@
+
+.login{
+    background: linear-gradient(256deg, #D6D6D6 0%, #5CB697 23.26%, #60AE94 47.22%, #2D9471 75.87%, #2D9471 99.31%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .login-card{
+        background-color: $branco;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: auto;
+        padding: 2rem 4rem;
+        border-radius: 10px;
+        margin: 10rem 1rem 0 1rem;
+    }
+    @media screen and (max-width: 720px){
+        .login-card{
+            padding: 2rem;
+        }
+    }
+    .login-card-title{
+        font-size: 40px;
+        font-family: $fonte-secundaria;
+        font-weight: 700;
+    }
+    .login-button{
+        background-color: $verde;
+        font-size: 20px;
+        color: $branco;
+        padding: 0.8rem 2rem;
+        margin: 2rem 0;
+    }
+    .login-button:hover{
+        color: $verde;
+        border: 0.8px solid $verde;
+        background-color: $branco;
+    }
+    .texto-cadastro-cadastre_se{
+        color: $verde;
+        text-decoration: none;
+    }
+}
+

@@ -1,0 +1,35 @@
+
+
+.editarproduto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .editar-titulo{
+        margin: 3rem 0;
+    }
+    .editar-form{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 1rem;
+        .form-item{
+            color: $verde
+        }
+        .editar-form-datas{
+            display: flex;
+            gap: 1rem
+        }
+        .editar-button{
+            background-color: $verde;
+            color: $branco;
+            font-family: var(--fonte-principal);
+            margin: 3rem 0;
+        }
+        .editar-button:hover{
+            color: $verde;
+            background-color: $branco;
+            border: 0.8px solid $verde;
+        }
+    }
+}
+
