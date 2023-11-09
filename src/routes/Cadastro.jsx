@@ -32,17 +32,6 @@ function Cadastro() {
     }
 
     const handleSubmit = (e) => {
-        if (validation()) {
-            e.preventDefault();
-            ListaUsuarios.push(nome.current.value);
-            ListaSenhas.push(senha.current.value);
-            navigate('/login');
-        } else {
-            navigate('/cadastro');
-        }
-    }
-
-    const validation = (e) =>{
         e.preventDefault();
         if (email.current.value !== confirmaemail.current.value) {
             alert('Os emails devem ser iguais.')
@@ -54,10 +43,11 @@ function Cadastro() {
             alert('CPF deve conter 11 digitos')
             navigate('/cadastro')
         } else {
-            return true
+            ListaUsuarios.push(nome.current.value);
+            ListaSenhas.push(senha.current.value);
+            navigate('/login');
         }
     }
-
 
 
     return (
