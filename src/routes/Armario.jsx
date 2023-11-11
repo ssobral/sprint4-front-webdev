@@ -47,8 +47,8 @@ function Armario() {
                         <p className='armario-form-titulo'>Preencha o formulário com os dados do alimento que deseja registrar:</p>
                             <form className='armario-form' onSubmit={handleSubmit}>
                                 <div className='armario-form-info'>
-                                    <input className="form-control armario-form-nome" type="text" placeholder="Digite o nome do alimento." name='nome' id='idnome' value={produto.nome} onChange={handleChange}></input>
-                                    <select className="form-control form-embalagens" name='embalagem' id='idembalagem' value={produto.embalagem} onChange={handleChange}>
+                                    <input className="form-control armario-form-nome" type="text" placeholder="Digite o nome do alimento." name='nome' id='idnome' value={produto.nome} required="required" onChange={handleChange}></input>
+                                    <select className="form-control form-embalagens" name='embalagem' id='idembalagem' value={produto.embalagem} onChange={handleChange} >
                                         <option>Selecione o tipo de embalagem</option>
                                         <option>Nenhuma</option>
                                         <option value='Vidro'>Vidro</option>
@@ -60,9 +60,9 @@ function Armario() {
                                 <div className='armario-form-datas-info'>
                                     <p className='armario-form-datas-titulo'>Preencha com a data de valdiade do produto:</p>
                                     <div className='armario-form-datas'>
-                                        <input class="form-control armario-form-datas-data" type="number" placeholder="Dia" id='dia' name='dia' aria-label="default input example" value={produto.dia} onChange={handleChange}></input>
-                                        <input class="form-control armario-form-datas-data" type="number" placeholder="Mês" id='mes' name='mes' aria-label="default input example" value={produto.mes} onChange={handleChange}></input>
-                                        <input class="form-control armario-form-datas-data" type="number" placeholder="Ano" id='ano' name='ano' aria-label="default input example" value={produto.ano} onChange={handleChange}></input>
+                                        <input class="form-control armario-form-datas-data" required="required" type="number" placeholder="Dia" id='dia' name='dia' aria-label="default input example" value={produto.dia} onChange={handleChange}></input>
+                                        <input class="form-control armario-form-datas-data" required="required" type="number" placeholder="Mês" id='mes' name='mes' aria-label="default input example" value={produto.mes} onChange={handleChange}></input>
+                                        <input class="form-control armario-form-datas-data" required="required" type="number" placeholder="Ano" id='ano' name='ano' aria-label="default input example" value={produto.ano} onChange={handleChange}></input>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn armario-form-button" id='btnSubmit'>Registrar Alimento</button>
