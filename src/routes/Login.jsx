@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { ListaSenhas, ListaUsuarios } from '../components/ListaUsuarios';
 
@@ -10,13 +10,13 @@ function Login() {
   const password = useRef();
 
   function validade() {
-    for (var i = 0; i < ListaUsuarios.length; i++) {
-      if (ListaUsuarios[i] === user.current.value && ListaSenhas[i] === password.current.value) {
+    for (var i = 0; i < usuarios.length; i++) {
+      if (usuarios[i].nome === user.current.value && usuarios[i].senha === password.current.value) {
         return true
       }
     }
   }
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validade()) {
@@ -30,6 +30,18 @@ function Login() {
       alert('Dados inválidos.');
     }
   };
+
+  const [usuarios, setUsuarios]= useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/usuarios')
+    .then((res)=>{
+        return res.json();
+    })
+    .then((res)=>{
+        setUsuarios(res);
+    })
+},[]);
 
   return (
     <>

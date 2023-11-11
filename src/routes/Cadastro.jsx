@@ -1,18 +1,27 @@
-import { useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import Logo from '../assets/Logo.png';
-import { ListaSenhas, ListaUsuarios } from '../components/ListaUsuarios';
 import { useForm } from 'react-hook-form'
 
 function Cadastro() {
 
-    const navigate = useNavigate();
-    const nome = useRef();
     const cpf = useRef();
     const email = useRef();
     const confirmaemail = useRef();
     const senha = useRef();
     const confirmasenha = useRef();
+
+    let { id } = useParams();
+
+    const [novo, setNovo] = useState({
+        id,
+        nome:"",
+        senha:"",
+    })
+
+    const handleChange =(e)=>{
+        setNovo({...novo, [e.target.name]:e.target.value});
+      };
 
     const { register, setValue, setFocus } = useForm([])
 
@@ -35,19 +44,35 @@ function Cadastro() {
         e.preventDefault();
         if (email.current.value !== confirmaemail.current.value) {
             alert('Os emails devem ser iguais.')
-            navigate('/cadastro')
         } else if (senha.current.value !== confirmasenha.current.value) {
             alert('As senhas devem ser iguais.')
-            navigate('/cadastro')
         } else if (cpf.current.value.length !== 11) {
             alert('CPF deve conter 11 digitos')
-            navigate('/cadastro')
         } else {
-            ListaUsuarios.push(nome.current.value);
-            ListaSenhas.push(senha.current.value);
-            navigate('/login');
+            fetch(`http://localhost:5000/usuarios/${id ? id: ''}`,{
+                method:'post',
+                headers:{
+                    'Content-Type':'application/json',
+                },
+                body:JSON.stringify(novo),
+              }).then(()=>{
+                window.location='/login';
+              });
         }
     }
+
+    useEffect(()=>{
+        if(id){
+          fetch(`http://localhost:5000/usuarios/${id}`)
+          .then((res)=>{
+            return res.json();
+          })
+          .then((data)=>{
+            setNovo(data);
+          });
+        }
+        },[id])
+    
 
 
     return (
@@ -62,7 +87,7 @@ function Cadastro() {
                         <div className='cadastro-dados'>
                             <div className="mb-3 cadastro-nome">
                                 <label for="exampleFormControlInput1" className="form-label cadastro-enfeite-texto">Digite seu nome:</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1 email nome" placeholder="Digite seu nome aqui" required="required" {...register('nome')} ref={nome}></input>
+                                <input type="text" className="form-control" name="nome" value={novo.nome} onChange={handleChange}  id="exampleFormControlInput1 email nome" placeholder="Digite seu nome aqui" required="required"></input>
 
                             </div>
                             <div className="mb-3 cadastro-nome">
@@ -119,7 +144,7 @@ function Cadastro() {
                         <div className='cadastro-senhas'>
                             <div>
                                 <label for="inputPassword5" className="form-label cadastro-enfeite-texto">Crie uma senha</label>
-                                <input type="password" placeholder='******' id="inputPassword5 senha1" className="form-control" aria-describedby="passwordHelpBlock" required="required" ref={senha}></input>
+                                <input type="password" name='senha' onChange={handleChange} value={novo.senha} placeholder='******' id="inputPassword5 senha1" className="form-control" aria-describedby="passwordHelpBlock" required="required" ref={senha}></input>
                             </div>
                             <div>
                                 <label for="inputPassword5" className="form-label cadastro-enfeite-texto">Confirme sua senha</label>

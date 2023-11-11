@@ -352,14 +352,6 @@ nav .nav-drowdown-login {
     width: 700px;
   }
 }
-@media screen and (max-width: 720px) {
-  .armario-table-info .armario-table-title-item {
-    font-size: 12px;
-  }
-  .armario-table-info .armario-table-item {
-    font-size: 12px;
-  }
-}
 .armario-table-info .armario-table-title {
   color: #2D9471;
 }
